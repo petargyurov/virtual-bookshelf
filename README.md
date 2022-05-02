@@ -5,6 +5,21 @@ I use it on my [personal site](https://petargyurov.com) to track what books I've
 
 ![Example](https://i.imgur.com/6u0CySS.png)
 
+**How do I add more books?**
+A book is defined as follows:
+```html
+<div class="book">
+    <div class="side spine">
+        <span class="spine-title"> Book Title </span>
+        <span class="spine-author"> PG </span>
+    </div>
+    <div class="side top"></div>
+    <div class="side cover"></div>
+</div>
+```
+
+Simply add this snippet for each book you want inside `<div class="bookshelf">`.
+
 **Why use JS at all?**
 
 I originally aimed for a no-JS implementation but there was no way of adding randomness to the book height, colours and patterns without it. You can of course remove the JS and implement that stuff manually.

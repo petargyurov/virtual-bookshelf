@@ -6,6 +6,7 @@ I use it on my [personal site](https://petargyurov.com) to track what books I've
 ![Example](https://i.imgur.com/6u0CySS.png)
 
 **How do I add more books?**
+
 A book is defined as follows:
 ```html
 <div class="book">

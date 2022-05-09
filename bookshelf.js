@@ -42,13 +42,14 @@ spines.map(function (s, i) {
   tops[i].style.top = `${280 - randomHeight}px`;
 
   // 75 characters above spoils the alignment
-  if(titles[i].innerHTML.length > 75) {
+  if (titles[i].innerHTML.length > 75) {
     titles[i].innerHTML = titles[i].innerHTML.substring(0, 73) + "...";
   }
 
-  // capitalize the first letter of each word as all capitals also spoil the alignment
-  titles[i].innerHTML = titles[i].innerHTML.replace(/\w\S*/g, function(txt){
-    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  //If all caps capitalize the first letter of each word as all capitals also spoil the alignment
+  if (titles[i].innerHTML.toUpperCase() === titles[i].innerHTML) {
+    titles[i].innerHTML = titles[i].innerHTML.replace(/\w\S*/g, function (txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
   }
-  );
 });

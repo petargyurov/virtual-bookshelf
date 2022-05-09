@@ -134,12 +134,14 @@
     color: gold;
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    /* Adding a bottom padding so that it does not mess with the author name */
+    padding-bottom: 15px;
   }
   
   .spine-author {
     position: absolute;
     color: goldenrod;
-    bottom: 0px;
+    bottom: 0px;  
     left: 20%; /* no idea why 20% centers it */
   }
   

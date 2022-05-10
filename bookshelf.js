@@ -8,9 +8,32 @@ function randomChoice(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
+function spinetitle(name)
+{
+  let len = Number(name.innerHTML.length);
+  if(len<8)
+  {
+    name.style.fontSize = `${25-len}px`;
+  }
+  else if(len<25)
+  {
+    name.style.fontSize = `${35-len}px`;
+  }
+  else if(len<35)
+  {
+    name.style.fontSize = "15px";
+  }
+  else if(len>35)
+  {
+    name.style.fontSize = "15px";
+    name.innerHTML = name.innerHTML.slice(0, (len-10)) + "...";
+  }
+}
+
 let spines = Object.values(document.getElementsByClassName("spine"));
 let covers = Object.values(document.getElementsByClassName("cover"));
 let tops = Object.values(document.getElementsByClassName("top"));
+let titles = Object.values(document.getElementsByClassName("spine-title"));
 
 let availablePatterns = ["argyle", "tartan"]; // we could probably get these programatically
 let availableColours = [
@@ -39,4 +62,5 @@ spines.map(function (s, i) {
   covers[i].style.top = `${280 - randomHeight}px`;
 
   tops[i].style.top = `${280 - randomHeight}px`;
+  spinetitle(titles[i]);
 });

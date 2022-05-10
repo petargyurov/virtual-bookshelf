@@ -40,3 +40,8 @@ spines.map(function (s, i) {
 
   tops[i].style.top = `${280 - randomHeight}px`;
 });
+
+function addBook(author, title) {
+    var newDiv = document.querySelector('div.book')
+    newDiv.insertAdjacentHTML('afterend','<div class="book"><div class="side spine"><span class="spine-title"> Book Title </span><span class="spine-author"> PG </span></div></div>')
+}

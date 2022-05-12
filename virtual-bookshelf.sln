@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "virtual-bookshelf", "..\..\..\OneDrive\Desktop\virtual-bookshelf\", "{03B804A0-BDB3-42AF-BD41-C9197BBB5A61}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56980"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\OneDrive\Desktop\virtual-bookshelf\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56980\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56980"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\OneDrive\Desktop\virtual-bookshelf\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56980\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56980"
+		SlnRelativePath = "..\..\..\OneDrive\Desktop\virtual-bookshelf\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03B804A0-BDB3-42AF-BD41-C9197BBB5A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03B804A0-BDB3-42AF-BD41-C9197BBB5A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53E7158C-A879-4A93-99E2-F58A4F4A608A}
+	EndGlobalSection
+EndGlobal

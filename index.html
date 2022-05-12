@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <link rel="stylesheet" href="bookshelf.css" />
-    
-  </head>
-
-  <body>
-      <div class="bookshelf">
-          <div class="book">
-              <div class="side spine">
-                  <span class="spine-title"> Book Title </span>
-                  <span class="spine-author"> PG </span>
-              </div>
-              <div class="side top"></div>
-              <div class="side cover"></div>
-          </div>
-         
-      </div>
-  </body>
-  <script src="bookshelf.js"></script>
+</head>
+<body onload="identity()">
+    <div class="bookshelf"></div>
+    <div id="addBook">
+        <form id="input">
+            <label id="lblCover" for="Cover">Cover:</label><br>
+            <input type="text" id="txtCover" name="cover" value="" onfocus='this.value = ""'><br>
+            <label id="lblTitle" for="Title">Title: </label><br>
+            <input type="text" id="txtTitle" name="title" value="" onfocus='this.value = ""'><br>
+            <label id="lblAuthor" for="Author">Author: </label><br>
+            <input type="text" id="txtAuthor" name="author" value="" onfocus='this.value = ""'><br>
+            <button id="btnAdd" onclick="add();return false">Add</button>
+        </form>
+    </div>
+</body>
+<script src="bookshelf.js"></script>
 </html>

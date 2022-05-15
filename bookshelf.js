@@ -45,11 +45,4 @@ spines.map(function (s, i) {
   if (titles[i].innerHTML.length > 75) {
     titles[i].innerHTML = titles[i].innerHTML.substring(0, 73) + "...";
   }
-
-  //If all caps capitalize the first letter of each word as all capitals also spoil the alignment
-  if (titles[i].innerHTML.toUpperCase() === titles[i].innerHTML) {
-    titles[i].innerHTML = titles[i].innerHTML.replace(/\w\S*/g, function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
-  }
 });

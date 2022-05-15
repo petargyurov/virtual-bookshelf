@@ -136,6 +136,7 @@
     text-orientation: mixed;
     /* Adding a bottom padding so that it does not mess with the author name */
     padding-bottom: 15px;
+    text-transform: capitalize;
   }
   
   .spine-author {

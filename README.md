@@ -29,6 +29,9 @@ I originally aimed for a no-JS implementation but there was no way of adding ran
 
 Yep, do whatever you want with it.
 
+If you want you can add this badge to help other know about this cool project:  
+[![Using Virtual Bookshelf](https://img.shields.io/badge/Extended%20with-Virtual%20Bookshelf-blue?logo=github)](https://github.com/petargyurov/virtual-bookshelf)
+
 **Is it perfect?**
 
 Nope. Doesn't handle long titles well. I'm sure there are other alignment issues. I wrote this in a day, don't expect much. Feel free to submit fixes/improvements.

@@ -1,3 +1,5 @@
+import { getRootCssStyles, getAllCssRules} from './css_utils.js';
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -12,7 +14,8 @@ let spines = Object.values(document.getElementsByClassName("spine"));
 let covers = Object.values(document.getElementsByClassName("cover"));
 let tops = Object.values(document.getElementsByClassName("top"));
 
-let availablePatterns = ["argyle", "tartan"]; // we could probably get these programatically
+let availablePatterns = getRootCssStyles(getAllCssRules());
+
 let availableColours = [
   "maroon",
   "darkgreen",
@@ -30,7 +33,7 @@ spines.map(function (s, i) {
   s.style.top = `${280 - randomHeight}px`;
 
   let randomPattern = randomChoice(availablePatterns);
-  s.style.backgroundImage = `var(--${randomPattern})`;
+  s.style.backgroundImage = `var(${randomPattern})`;
 
   let randomColor = randomChoice(availableColours);
   s.style.backgroundColor = randomColor;

@@ -16,7 +16,7 @@ let tops = Object.values(document.getElementsByClassName("top"));
 
 let availablePatterns = getRootCssStyles(getAllCssRules());
 
-let availableColours = [
+let availableColors = [
   "maroon",
   "darkgreen",
   "darkolivegreen",
@@ -35,7 +35,7 @@ spines.map(function (s, i) {
   let randomPattern = randomChoice(availablePatterns);
   s.style.backgroundImage = `var(${randomPattern})`;
 
-  let randomColor = randomChoice(availableColours);
+  let randomColor = randomChoice(availableColors);
   s.style.backgroundColor = randomColor;
 
   covers[i].style.height = `${randomHeight}px`;

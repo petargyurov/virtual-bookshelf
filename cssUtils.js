@@ -16,7 +16,7 @@ export function getRootCssStyles(rootRule = ":root") {
         Object.values(arrayElement).forEach(ruleElement => {
             if (ruleElement.selectorText === rootRule) {
                 Object.values(ruleElement.style).forEach(style => {
-                    if (style.startsWith('--') && cssVars.indexOf(style) == -1) {
+                    if (style.startsWith('--spine-') && cssVars.indexOf(style) == -1) {
                         cssVars.push(style);
                     }
                 })

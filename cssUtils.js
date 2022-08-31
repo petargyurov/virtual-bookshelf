@@ -6,7 +6,7 @@ export function getRootCssStyles(rootRule = ":root") {
                 return [...styleSheet.cssRules]
                     .map(rule => rule)
             } catch (e) {
-                console.log('Access to stylesheet %s is denied. Ignoring...', styleSheet.href);
+                // console.log('Access to stylesheet %s is denied. Ignoring...', styleSheet.href);
             }
         })
 

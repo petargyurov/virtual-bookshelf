@@ -1,4 +1,4 @@
-import { getRootCssStyles, getAllCssRules} from './cssUtils.js';
+import { getRootCssStyles} from './cssUtils.js';
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -14,7 +14,7 @@ let spines = Object.values(document.getElementsByClassName("spine"));
 let covers = Object.values(document.getElementsByClassName("cover"));
 let tops = Object.values(document.getElementsByClassName("top"));
 
-let availablePatterns = getRootCssStyles(getAllCssRules());
+let availablePatterns = getRootCssStyles();
 
 let availableColors = [
   "maroon",

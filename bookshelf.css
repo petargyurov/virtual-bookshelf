@@ -140,12 +140,28 @@
     width: 50px;
     height: 280px;
     position: relative;
-    margin-left: 1px;
+    margin-left: 5px;
     transform-style: preserve-3d;
     transform: translateZ(0) rotateY(0);
     transition: transform 1s;
   }
-  
+
+  .book:hover {
+    z-index: 1;
+    transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translateY(50px)
+      translateX(-30px);
+  }
+
+  @media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance: none) {
+      /* Safari Only CSS here */
+      .book:hover {
+        z-index:unset;
+        transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translate3d(100px, 30px, 200px);
+      }
+    }
+  }
+
   .side {
     position: absolute;
     border: 2px solid black;
@@ -161,7 +177,7 @@
     width: 50px;
     height: 280px;
     /* Patterns from: https://projects.verou.me/css3patterns/ */
-    background-image: var(--tartan);
+    background-image: var(--spine-tartan);
     transform: rotateY(0deg) translateZ(0px);
   }
   
@@ -203,10 +219,5 @@
     transform: rotateY(90deg) translateZ(0);
     transition: transform 1s;
   }
-  
-  .book:hover {
-    z-index: 1;
-    transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translateY(50px)
-      translateX(-30px);
-  }
+
   

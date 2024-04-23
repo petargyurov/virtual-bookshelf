@@ -43,3 +43,15 @@ spines.map(function (s, i) {
 
   tops[i].style.top = `${280 - randomHeight}px`;
 });
+//
+// lazy load the book covers on hover
+let books = Object.values(document.getElementsByClassName("book"));
+books.map(function (b, i) {
+  b.onmouseover = function () {
+    let covers = b.getElementsByClassName("cover");
+    Array.from(covers).map(function (c, i) {
+      c.style.backgroundImage = "url(" + c.getAttribute("img") + ")";
+    }
+    )
+  };
+});

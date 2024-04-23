@@ -1,7 +1,7 @@
 # Virtual Bookshelf
 This is a simple visualisation of books on a bookshelf using some CSS transforms to give the effect of picking out the book when you hover over it.
 
-I use it on my [personal site](https://petargyurov.com) to track what books I've read. It integrates nicely with static site generators, and well, just about anything since it's all vanilla JS, CSS and HTML.
+It integrates nicely with static site generators, and well, just about anything since it's all vanilla JS, CSS and HTML. Have a look at the [examples](#examples) below!
 
 ![Example](https://i.imgur.com/6u0CySS.png)
 
@@ -15,7 +15,10 @@ A book is defined as follows:
         <span class="spine-author"> PG </span>
     </div>
     <div class="side top"></div>
-    <div class="side cover"></div>
+    <div 
+        class="side cover"
+        img="https://picsum.photos/190/280"
+    />
 </div>
 ```
 
@@ -35,3 +38,8 @@ If you found this project useful you can make use of the following badge to spre
 **Is it perfect?**
 
 Nope. Doesn't handle long titles well. I'm sure there are other alignment issues. I wrote this in a day, don't expect much. Feel free to submit fixes/improvements.
+
+## Examples
+
+- [petargyurov.com](https://petargyurov.com/bookshelf)
+- [janehndrikewers.uk](https://janhendrikewers.uk/bookshelf)

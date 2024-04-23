@@ -196,7 +196,7 @@
     width: 190px;
     height: 280px;
     top: 0px;
-    background-image: url("https://picsum.photos/190/280");
+    background-color: grey;
     background-size: contain;
     background-repeat: round;
     left: 50px;

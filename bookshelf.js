@@ -1,24 +1,15 @@
-import { getRootCssStyles } from "./cssUtils.js";
+import {
+  getAngleInRadians,
+  getRandomInt,
+  getRootCssStyles,
+  randomChoice,
+} from "./utils.js";
 
 const SLANTED_BOOK_ANGLE = 12;
 const MIN_BOOK_HEIGHT = 220;
 const MAX_BOOK_HEIGHT = 290;
 const MIN_SPINE_WIDTH = 35;
 const MAX_SPINE_WIDTH = 65;
-
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function randomChoice(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
-function getAngleInRadians(value) {
-  return (parseFloat(value) * Math.PI) / 180;
-}
 
 let spines = Object.values(document.getElementsByClassName("spine"));
 let covers = Object.values(document.getElementsByClassName("cover"));

@@ -1,4 +1,10 @@
-import { getRootCssStyles} from './cssUtils.js';
+import { getRootCssStyles } from "./cssUtils.js";
+
+const SLANTED_BOOK_ANGLE = 12;
+const MIN_BOOK_HEIGHT = 220;
+const MAX_BOOK_HEIGHT = 290;
+const MIN_SPINE_WIDTH = 35;
+const MAX_SPINE_WIDTH = 65;
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -8,6 +14,10 @@ function getRandomInt(min, max) {
 
 function randomChoice(array) {
   return array[Math.floor(Math.random() * array.length)];
+}
+
+function getAngleInRadians(value) {
+  return (parseFloat(value) * Math.PI) / 180;
 }
 
 let spines = Object.values(document.getElementsByClassName("spine"));
@@ -26,11 +36,6 @@ let availableColors = [
   "sienna",
   "midnightblue",
 ];
-
-const MIN_BOOK_HEIGHT = 220;
-const MAX_BOOK_HEIGHT = 290;
-const MIN_SPINE_WIDTH = 35;
-const MAX_SPINE_WIDTH = 65;
 
 // assign a random height, width, pattern and colour to each book
 spines.map(function (s, i) {
@@ -56,4 +61,23 @@ spines.map(function (s, i) {
   tops[i].style.top = `${280 - randomHeight}px`;
 
   covers[i].style.left = `${randomSpineWidth}px`;
+});
+
+books.forEach(function (book, i) {
+  if (!book.classList.contains("slanted-book")) {
+    return;
+  }
+
+  book.style.setProperty("--lean-angle", `-${SLANTED_BOOK_ANGLE}deg`);
+
+  let computedBookStyles = getComputedStyle(book);
+  let baseMarginLeft = parseFloat(computedBookStyles.marginLeft) || 0;
+  let leanAngle = getAngleInRadians(
+    computedBookStyles.getPropertyValue("--lean-angle"),
+  );
+  let spineHeight =
+    parseFloat(spines[i].style.height) || spines[i].offsetHeight;
+  let leftwardLean = Math.abs(Math.sin(leanAngle) * spineHeight) + 1;
+
+  book.style.marginLeft = `${Math.max(baseMarginLeft, leftwardLean)}px`;
 });

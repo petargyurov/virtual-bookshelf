@@ -127,6 +127,7 @@
   position: relative;
   margin-left: 5px;
   transform-style: preserve-3d;
+  transform-origin: bottom left;
   transform: translateZ(0) rotateY(0);
   transition: transform 1s;
 }
@@ -190,6 +191,18 @@
 }
 
 .book:hover {
+  z-index: 1;
+  transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translateY(50px)
+    translateX(-30px);
+}
+
+.slanted-book {
+  --lean-lift: 2px;
+  transform: translateZ(0) rotateY(0) rotateZ(var(--lean-angle))
+    translateY(var(--lean-lift));
+}
+
+.slanted-book:hover {
   z-index: 1;
   transform: rotateX(-25deg) rotateY(-40deg) rotateZ(-15deg) translateY(50px)
     translateX(-30px);

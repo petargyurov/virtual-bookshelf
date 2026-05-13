@@ -125,7 +125,7 @@
   width: 50px;
   height: 280px;
   position: relative;
-  margin-left: 1px;
+  margin-left: 5px;
   transform-style: preserve-3d;
   transform: translateZ(0) rotateY(0);
   transition: transform 1s;

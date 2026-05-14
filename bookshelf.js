@@ -11,10 +11,10 @@ const MAX_BOOK_HEIGHT = 290;
 const MIN_SPINE_WIDTH = 35;
 const MAX_SPINE_WIDTH = 65;
 
-let spines = Object.values(document.getElementsByClassName("spine"));
-let covers = Object.values(document.getElementsByClassName("cover"));
-let tops = Object.values(document.getElementsByClassName("top"));
-let books = Object.values(document.getElementsByClassName("book"));
+let spines = Array.from(document.getElementsByClassName("spine"));
+let covers = Array.from(document.getElementsByClassName("cover"));
+let tops = Array.from(document.getElementsByClassName("top"));
+let books = Array.from(document.getElementsByClassName("book"));
 
 let availablePatterns = getRootCssStyles();
 
@@ -54,6 +54,7 @@ spines.map(function (s, i) {
   covers[i].style.left = `${randomSpineWidth}px`;
 });
 
+// handle positioning for leaning books
 books.forEach(function (book, i) {
   if (!book.classList.contains("slanted-book")) {
     return;
@@ -66,9 +67,14 @@ books.forEach(function (book, i) {
   let leanAngle = getAngleInRadians(
     computedBookStyles.getPropertyValue("--lean-angle"),
   );
-  let spineHeight =
-    parseFloat(spines[i].style.height) || spines[i].offsetHeight;
-  let leftwardLean = Math.abs(Math.sin(leanAngle) * spineHeight) + 1;
 
-  book.style.marginLeft = `${Math.max(baseMarginLeft, leftwardLean)}px`;
+  let previousBook = books[i - 1];
+
+  // if the previous book is a non-leaning book, offset the position for the current leaning book
+  if (previousBook && !previousBook.classList.contains("slanted-book")) {
+    let spineHeight = spines[i].offsetHeight;
+    let currentSpineHeight = parseFloat(spineHeight);
+    let offset = Math.abs(Math.sin(leanAngle) * currentSpineHeight) + 1;
+    book.style.marginLeft = `${offset}px`;
+  }
 });

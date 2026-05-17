@@ -8,7 +8,7 @@ import {
 const SLANTED_BOOK_ANGLE = 12;
 const MIN_BOOK_HEIGHT = 220;
 const MAX_BOOK_HEIGHT = 290;
-const MIN_SPINE_WIDTH = 35;
+const MIN_SPINE_WIDTH = 20;
 const MAX_SPINE_WIDTH = 65;
 
 let spines = Array.from(document.getElementsByClassName("spine"));

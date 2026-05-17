@@ -1,21 +1,36 @@
 # Virtual Bookshelf
+
 This is a simple visualisation of books on a bookshelf using some CSS transforms to give the effect of picking out the book when you hover over it.
 
 I use it on my [personal site](https://petargyurov.com) to track what books I've read. It integrates nicely with static site generators, and well, just about anything since it's all vanilla JS, CSS and HTML.
 
-![Example](https://i.imgur.com/6u0CySS.png)
+![Example](cover.png)
 
 **How do I add more books?**
 
 A book is defined as follows:
+
 ```html
 <div class="book">
-    <div class="side spine">
-        <span class="spine-title"> Book Title </span>
-        <span class="spine-author"> PG </span>
-    </div>
-    <div class="side top"></div>
-    <div class="side cover"></div>
+  <div class="side spine">
+    <span class="spine-title"> Book Title </span>
+    <span class="spine-author"> PG </span>
+  </div>
+  <div class="side top"></div>
+  <div class="side cover"></div>
+</div>
+```
+
+For a slanted book, just add the `slanted-book` class:
+
+```html
+<div class="book slanted-book">
+  <div class="side spine">
+    <span class="spine-title"> Book Title </span>
+    <span class="spine-author"> PG </span>
+  </div>
+  <div class="side top"></div>
+  <div class="side cover"></div>
 </div>
 ```
 
@@ -27,7 +42,7 @@ I originally aimed for a no-JS implementation but there was no way of adding ran
 
 **Is this free to use?**
 
-Yep, do whatever you want with it.
+Yep, do whatever you want with it. The license is permissive for whatever.
 
 If you found this project useful you can make use of the following badge to spread the word:  
 [![Using Virtual Bookshelf](https://img.shields.io/badge/Extended%20with-Virtual%20Bookshelf-blue?logo=github)](https://github.com/petargyurov/virtual-bookshelf)
